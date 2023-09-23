@@ -4,14 +4,14 @@ using namespace std;
 int equilibriumPoint(long long a[], int n) {
     
         //prefix sum and suffix sum 
-        long long sum = 0;
+        long long sumOfArr = 0;
         long long left = 0;
         for(int i=0;i<n;i++){
-            sum += a[i];
+            sumOfArr += a[i];
         }
         for(int i=0;i<n;i++){
-            sum -= a[i];
-            if(sum == left){
+            sumOfArr -= a[i];
+            if(sumOfArr == left){
                 return i+1;
             }
             left += a[i];
