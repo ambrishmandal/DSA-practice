@@ -5,16 +5,16 @@ int equilibriumPoint(long long a[], int n) {
     
         //prefix sum and suffix sum 
         long long sumOfArr = 0;
-        long long left = 0;
+        long long leftSum = 0;
         for(int i=0;i<n;i++){
             sumOfArr += a[i];
         }
         for(int i=0;i<n;i++){
             sumOfArr -= a[i];
-            if(sumOfArr == left){
+            if(sumOfArr == leftSum){
                 return i+1;
             }
-            left += a[i];
+            leftSum += a[i];
         }
         return -1;
         
